@@ -365,7 +365,7 @@ ${className}.${init_method_name}();
 
   if (
     ["transpile", "-transpile", "--transpile"].includes(
-      process.argv.slice(2)?.trim()
+      process.argv.slice(2)?.join("")?.trim()
     )
   ) {
     console.log("Trasnpile to JS start");
