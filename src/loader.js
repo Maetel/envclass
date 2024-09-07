@@ -1,3 +1,18 @@
+const inputArgs = process.argv.slice(2);
+//help
+if (
+  ["--help", "help", "h", "--h", "-h", "-help"].includes(inputArgs[0]?.trim())
+) {
+  console.log(`
+  Usage: envclass [options]
+
+  Options:
+    --init  :  Write default option file to the root (envclass.config.json)
+    --transpile : Writes transpiled js files. Refer to envclass.config.json for the output directory
+  `);
+  return;
+}
+
 const fs = require("fs");
 const path = require("path");
 const findup = require("findup-sync");
@@ -32,7 +47,6 @@ const readJSON = (path) =>
   path ? JSON.parse(fs.readFileSync(path, "utf-8")) : null;
 const optionFile = readJSON(findup("envclass.config.json"));
 
-const inputArgs = process.argv.slice(2);
 if (inputArgs[0]?.trim() === "--init") {
   //abort if the file already exists
   if (optionFile) {
