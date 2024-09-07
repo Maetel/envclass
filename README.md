@@ -31,19 +31,23 @@ npm run envclass
 To generate default options, run
 
 ```bash
-npm run envclass -- --init
+npx envclass --init
 ```
 
 For JS transpilation, run
 
 ```bash
-npm run envclass -- --transpile
+npx envclass --transpile
+# or add to package.json
+{
+  "scripts": { "envclass": "envclass --transpile" }
+}
 ```
 
 For help, run
 
 ```bash
-npm run envclass -- --help
+npx envclass -- --help
 ```
 
 #### Usage
