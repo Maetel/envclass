@@ -1,6 +1,6 @@
 {
   "name": "@iamjam/envclass",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Turns .env-like files into TypeScript and JavaScript class files usable in Next.js",
   "main": "index.js",
   "bin": "./index.js",
