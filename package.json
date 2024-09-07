@@ -1,10 +1,11 @@
 {
   "name": "@iamjam/envclass",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Turns .env-like files into TypeScript and JavaScript class files",
   "main": "index.js",
+  "bin": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "envclass": "node index.js"
   },
   "repository": {
     "type": "git",
