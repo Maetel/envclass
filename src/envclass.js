@@ -55,7 +55,8 @@ exports.envclass = function (inputOptions) {
     privateFileDirPath,
     privateFileName + ".ts"
   );
-  const publicImportPath = path.join(publicImportDirPath, publicFileName);
+  const publicImportPath =
+    "./" + path.join(publicImportDirPath, publicFileName);
 
   const envfile = searchThrough.reduce((acc, lookup) => {
     if (acc) {
