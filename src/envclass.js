@@ -363,7 +363,11 @@ ${className}.${init_method_name}();
   /// /////////////////////////////////////////////////////////////////////
   // Transpile
 
-  if (process.argv.slice(2).includes("transpile")) {
+  if (
+    ["transpile", "-transpile", "--transpile"].includes(
+      process.argv.slice(2)?.trim()
+    )
+  ) {
     console.log("Trasnpile to JS start");
     const esbuild = require("esbuild");
     const dstDir = transpileOutDir ?? "./_ENV";
