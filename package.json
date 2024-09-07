@@ -1,6 +1,6 @@
 {
   "name": "@iamjam/envclass",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Turns .env-like files into TypeScript and JavaScript class files",
   "main": "index.js",
   "bin": "./index.js",
