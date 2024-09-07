@@ -1,0 +1,25 @@
+{
+  "name": "@iamjam/envclass",
+  "version": "0.1",
+  "description": "Turns .env-like files into TypeScript and JavaScript class files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maetel/envclass.git"
+  },
+  "keywords": [
+    "env",
+    ".env",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Maetel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maetel/envclass/issues"
+  },
+  "homepage": "https://github.com/Maetel/envclass#readme"
+}
