@@ -286,6 +286,20 @@ export default class ${className}${
     ${parentClassName ? `${className}.${parent_init_method_name}();` : ""}
     ${initMethodArea}
   }
+
+  ////////////////////////////////////////////////////////////////////////
+  // toObject Area
+  static toObject(): { [key: string]: any } {
+    const obj: { [key: string]: any } = ${parentClassName ? `${parentClassName}.toObject()` : "{}"};
+    
+    Object.getOwnPropertyNames(this).forEach((key) => {
+      if (typeof this[key as keyof typeof ${className}] !== "function") {
+        obj[key] = this[key as keyof typeof ${className}];
+      }
+    });
+    
+    return obj;
+  }
 }
 ${className}.${init_method_name}();
 `;
