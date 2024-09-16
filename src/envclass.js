@@ -293,8 +293,9 @@ export default class ${className}${
     const obj: { [key: string]: any } = ${parentClassName ? `${parentClassName}.toObject()` : "{}"};
     
     Object.getOwnPropertyNames(this).forEach((key) => {
-      if (typeof this[key as keyof typeof ${className}] !== "function") {
-        obj[key] = this[key as keyof typeof ${className}];
+      const value = this[key as keyof typeof ${className}];
+      if (typeof value === "string") {
+        obj[key] = value;
       }
     });
     
