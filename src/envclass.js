@@ -328,7 +328,7 @@ ${className}.${init_method_name}();
       (${className}.IS_DEV ) ? process.env.${key}_DEV :
       (${className}.IS_QA  ) ? process.env.${key}_QA :
       (${className}.IS_PROD) ? process.env.${key}_PROD :
-      null
+      (process.env.${key} ?? null)
     )) as string;\n`;
       })
       .join("\n\t\t");
