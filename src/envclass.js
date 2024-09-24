@@ -250,29 +250,27 @@ exports.envclass = function (inputOptions) {
     let fileTemplate = `
 /* DO NOT EDIT! THIS IS AUTO-GENERATED FILE */
 ${parentClassName ? `import ${parentClassName} from "${publicImportPath}"` : ""}
-export default class ${className}${
-      parentClassName ? ` extends ${parentClassName}` : ""
-    } {
-  ${
-    parentClassName
-      ? ""
-      : `////////////////////////////////////////////////////////////////////////
+export default class ${className}${parentClassName ? ` extends ${parentClassName}` : ""
+      } {
+  ${parentClassName
+        ? ""
+        : `////////////////////////////////////////////////////////////////////////
   // ENV Area
   static ${ENV_NAME} =
     (${ENV_ORDER.map((key) => `process.env.${key}`).join(
-      " ?? \n\t\t\t"
-    )}) as string;
+          " ?? \n\t\t\t"
+        )}) as string;
   static IS_DEV = ([${devEnvs
-    .map((word) => `"${word}"`)
-    .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;
+          .map((word) => `"${word}"`)
+          .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;
   static IS_QA = ([${qaEnvs
-    .map((word) => `"${word}"`)
-    .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;
+          .map((word) => `"${word}"`)
+          .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;
   static IS_PROD = ([${prodEnvs
-    .map((word) => `"${word}"`)
-    .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;\n
+          .map((word) => `"${word}"`)
+          .join(",")}].includes(\n\t\t\t\t\t${classEnv}?.toLowerCase())) as boolean;\n
   static IS_DEV_OR_QA = ${className}.IS_DEV || ${className}.IS_QA as boolean;`
-  }
+      }
   ////////////////////////////////////////////////////////////////////////
   // Common Area
   ${commonVariableArea}
